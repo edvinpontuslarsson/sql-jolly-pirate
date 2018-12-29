@@ -1,0 +1,21 @@
+body {
+    background-color: black;
+    color: white;
+    width: 75%;
+    margin: auto;
+    text-align: center;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: red;
+    text-decoration: none;
+}
+
+#menu {
+    display: grid;
+    grid-template-columns: auto auto auto auto
+}
