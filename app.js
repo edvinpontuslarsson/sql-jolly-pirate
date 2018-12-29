@@ -21,11 +21,15 @@ app.engine('.hbs', handlebars({
     extname: '.hbs'
 }))
 
+app.set('view engine', '.hbs')
+
 // sets path to public directory for static files
 app.use(express.static(path.join(__dirname, 'public')))
 
 // sets routes
 app.use('/', require('./routes/index'))
+
+/*
 app.use('/', require('./routes/berths/all'))
 app.use('/', require('./routes/berths/specific'))
 app.use('/', require('./routes/events/all'))
@@ -34,6 +38,7 @@ app.use('/', require('./routes/members/all'))
 app.use('/', require('./routes/members/newest'))
 app.use('/', require('./routes/members/earliest'))
 app.use('/', require('./routes/members/specific'))
+*/
 
 // sets 404 not found-route
 app.use((req, res, next) => {
