@@ -28,13 +28,12 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 // sets routes
 app.use('/', require('./routes/index'))
-
-/*
 app.use('/', require('./routes/berths/all'))
-app.use('/', require('./routes/berths/specific'))
+// app.use('/', require('./routes/berths/specific'))
 app.use('/', require('./routes/events/all'))
-app.use('/', require('./routes/events/specific'))
+// app.use('/', require('./routes/events/specific'))
 app.use('/', require('./routes/members/all'))
+/*
 app.use('/', require('./routes/members/newest'))
 app.use('/', require('./routes/members/earliest'))
 app.use('/', require('./routes/members/specific'))
