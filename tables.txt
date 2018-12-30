@@ -1,0 +1,29 @@
+CREATE TABLE `Boats` (
+  `boat_id` INT(8),
+  `member_id` INT(8),
+  `boat_type` VARCHAR(100),
+  `boat_length` INT(8),
+  PRIMARY KEY (`boat_id`),
+  KEY `FK` (`member_id`)
+);
+
+CREATE TABLE `Berths` (
+  `berth_id` INT(8),
+  `boat_id` INT(8),
+  PRIMARY KEY (`berth_id`),
+  KEY `FK` (`boat_id`)
+);
+
+CREATE TABLE `Events` (
+  `event_id` INT(8),
+  `event_date_utc` VARCHAR(100),
+  `event_info` VARCHAR(5000),
+  PRIMARY KEY (`event_id`)
+);
+
+CREATE TABLE `Members` (
+  `member_id` INT(8),
+  `member_name` VARCHAR(100),
+  `member_since_utc` VARCHAR(100),
+  PRIMARY KEY (`member_id`)
+);
