@@ -9,21 +9,26 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
-    <div id="pirate-pic">
-        <img src="/img/pirate-47705__340.png" alt="Jolly Pirate">
-    </div>
+    <section id="main-section">
+        <header>
+        <div id="pirate-pic">
+            <img src="/img/pirate-47705__340.png" alt="Jolly Pirate">
+        </div>
 
-    <h1>The Jolly Pirate Boat Club</h1>
+        <h1>The Jolly Pirate Boat Club</h1>
 
-    <section id="menu">
-        <p><a href="/">Home</a></p>
-        <p><a href="/members">Members</a></p>
-        <p><a href="/berths">Berths</a></p>
-        <p><a href="/events">Events</a></p>
+        <div id="menu">
+            <p><a href="/">Home</a></p>
+            <p><a href="/members">Members</a></p>
+            <p><a href="/berths">Berths</a></p>
+            <p><a href="/events">Events</a></p>
+        </div>
+        </header>
+        
+        <!-- Page content -->
+        <div id="content">
+            {{{ body }}}
+        </div>
     </section>
-    
-    <!-- Page content -->
-    {{{ body }}}
-
 </body>
 </html>
