@@ -7,7 +7,7 @@ CREATE TABLE `Boats` (
 );
 
 CREATE TABLE `Berths` (
-  `berth_id` INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  `berth_id` INT(8) PRIMARY KEY,
   `boat_id` INT(8) NOT NULL,
   KEY `FK` (`boat_id`)
 );
