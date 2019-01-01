@@ -39,7 +39,7 @@ app.use('/', require('./routes/members/earliest'))
 */
 app.use('/', require('./routes/members/specific'))
 
-// sets 404 not found-route
+// sets 404 not found error
 app.use((req, res, next) => {
     const error = new Error()
     error.status = 404
@@ -47,10 +47,10 @@ app.use((req, res, next) => {
 })
 
 // error setting
-app.use((err, req, res) => {
+app.use((err, req, res, next) => {
     if(err.status === 404) {
-        return res.status(404)
-            .sendFile(path.join(__dirname, 'views', 'errors', '404.html'))
+        res.status(404)
+        return res.render('errors/404')
     }
 
     // for unhandled internal errors
