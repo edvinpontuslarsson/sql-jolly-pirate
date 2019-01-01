@@ -28,15 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 // sets routes
 app.use('/', require('./routes/index'))
-app.use('/', require('./routes/berths/all'))
-// app.use('/', require('./routes/berths/specific'))
-app.use('/', require('./routes/events/all'))
-// app.use('/', require('./routes/events/specific'))
 app.use('/', require('./routes/members/all'))
-/*
-app.use('/', require('./routes/members/newest'))
-app.use('/', require('./routes/members/earliest'))
-*/
 app.use('/', require('./routes/members/specific'))
 
 // sets 404 not found error
@@ -55,6 +47,7 @@ app.use((err, req, res, next) => {
 
     // for unhandled internal errors
     console.log(err)
+    
     return res.status(500)
         .sendFile(path.join(__dirname, 'views', 'errors', '500.html'))
 })

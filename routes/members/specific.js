@@ -8,13 +8,13 @@ router.route('/members/:id')
         const memberID = req.params.id
         const memberData = 
             await dao.getSpecificMemberData(memberID)
-
-        if(memberData.length > 1) {
+        
+        if(memberData.length >= 1) {
             const memberName = memberData[0].member_name
 
             res.render('members/specific', {
                 memberName, memberData
-            })    
+            })
         } else {
             res.status(404)
             res.redirect('/404')

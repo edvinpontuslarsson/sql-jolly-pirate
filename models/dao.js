@@ -20,6 +20,8 @@ const getSpecificMemberData = memberID =>
         resolve(memberData)
     })
 
+
+
 const getFromDB = sqlQuery => 
     new Promise(resolve => {
         db.query(sqlQuery, (err, result) => {
