@@ -22,13 +22,19 @@ const getSpecificMemberData = memberID =>
 
 const getBiggestBoatlength = () =>
     new Promise(async resolve => {
-        const members = await getFromDB(
+        const result = await getFromDB(
             'SELECT MAX(boat_length) AS boat_length FROM Boats'
         )
-        resolve(members[0].boat_length)
+        resolve(result[0].boat_length)
     })
 
-// 4: size of smallest boat
+const getSmallestBoatLength = () =>
+    new Promise(async resolve => {
+        const result = await getFromDB(
+            'SELECT MIN(boat_length) AS boat_length FROM Boats'
+        )
+        resolve(result[0].boat_length)
+    })
 
 // 5: all boats, with member name, grouped by boat size min - max
 
@@ -43,5 +49,6 @@ const getFromDB = sqlQuery =>
 module.exports = {
     getAllMembers,
     getSpecificMemberData,
-    getBiggestBoatlength
+    getBiggestBoatlength,
+    getSmallestBoatLength
 }

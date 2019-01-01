@@ -18,7 +18,10 @@ router.route('/boats/biggest')
 
 router.route('/boats/smallest')
     .get(async (req, res) => {
+        const boatLength =
+            await dao.getSmallestBoatLength()
 
+        res.render('boats/smallest', { boatLength })
     })
 
 module.exports = router
