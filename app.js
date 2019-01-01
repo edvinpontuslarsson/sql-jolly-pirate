@@ -36,8 +36,8 @@ app.use('/', require('./routes/members/all'))
 /*
 app.use('/', require('./routes/members/newest'))
 app.use('/', require('./routes/members/earliest'))
-app.use('/', require('./routes/members/specific'))
 */
+app.use('/', require('./routes/members/specific'))
 
 // sets 404 not found-route
 app.use((req, res, next) => {

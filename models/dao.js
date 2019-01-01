@@ -7,8 +7,17 @@ const getAllMembers = () =>
         const members = await getFromDB(
             'SELECT * FROM Members'
         )
-
         resolve(members)
+    })
+
+const getSpecificMemberData = memberID =>
+    new Promise(async resolve => {
+        const memberData = await getFromDB(
+            `SELECT * FROM Members 
+            INNER JOIN Boats ON Boats.member_id = Members.member_id 
+            WHERE Members.member_id = ${memberID}`
+        )
+        resolve(memberData)
     })
 
 const getFromDB = sqlQuery => 
@@ -20,5 +29,6 @@ const getFromDB = sqlQuery =>
     })
 
 module.exports = {
-    getAllMembers
+    getAllMembers,
+    getSpecificMemberData
 }
