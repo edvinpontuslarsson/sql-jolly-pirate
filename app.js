@@ -30,6 +30,9 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/', require('./routes/index'))
 app.use('/', require('./routes/members/all'))
 app.use('/', require('./routes/members/specific'))
+app.use('/', require('./routes/boats/all'))
+app.use('/', require('./routes/boats/biggest'))
+app.use('/', require('./routes/boats/smallest'))
 
 // sets 404 not found error
 app.use((req, res, next) => {
