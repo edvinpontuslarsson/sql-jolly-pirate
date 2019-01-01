@@ -7,7 +7,7 @@ router.route('/members')
     .get(async (req, res) => {
         const members = await dao.getAllMembers()
         console.log(members)
-        res.render('members/all')
+        res.render('members/all', { members })
     })
 
 module.exports = router

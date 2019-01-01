@@ -1,3 +1,10 @@
 <h2><a href="/earliest">Our earliest member</a></h2>
 <h2><a href="/newest">Our newest member</a></h2>
 <h2>All members:</h2>
+{{#each members}}
+    <p>
+        <a href="/members/{{this.member_id}}">
+            {{this.member_name}}
+        </a>
+    </p>
+{{/each}}

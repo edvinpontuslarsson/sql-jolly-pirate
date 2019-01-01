@@ -7,6 +7,7 @@ const getAllMembers = () =>
         const members = await getFromDB(
             'SELECT * FROM Members'
         )
+
         resolve(members)
     })
 
