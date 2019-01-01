@@ -5,7 +5,10 @@ const router = require('express').Router()
 
 router.route('/boats')
     .get(async (req, res) => {
-        res.render('boats/all')
+        const allBoats = 
+            await dao.getAllBoatsAscendingLengthOrder()
+
+        res.render('boats/all', { allBoats })
     })
 
 router.route('/boats/biggest')

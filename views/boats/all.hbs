@@ -5,3 +5,9 @@
     <a href="boats/smallest">How small is our smallest boat?</a>
 </p>
 <h2>All boats:</h2>
+{{#each allBoats}}
+    <p>
+        A {{this.boat_length}} feet long {{this.boat_type}}
+        owned by {{this.member_name}}
+    </p>
+{{/each}}
