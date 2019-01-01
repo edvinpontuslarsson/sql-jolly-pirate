@@ -1,3 +1,7 @@
+/**
+ * File for querying data from the database
+ */
+
 'use strict'
 
 const db = require('./getDBConnection')

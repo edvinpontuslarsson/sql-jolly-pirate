@@ -1,7 +1,8 @@
-<h2>{{memberName}}</h2>
+<h2>Member: {{memberName}}</h2>
+<h3>Boats:</h3>
 {{#each memberData}}
     <p>
         Boat type: {{this.boat_type}} <br>
-        Boat length: {{this.boat_length}}
+        Boat length: {{this.boat_length}} feet
     </p>
 {{/each}}
