@@ -3,19 +3,21 @@
 const db = require('./getDBConnection')
 
 const getAllMembers = () =>
-    new Promise(resolve => resolve(
-        getFromDB(
-            'Query here'
+    new Promise(async resolve => {
+        const members = await getFromDB(
+            'SELECT * FROM Members'
         )
-    ))
+        resolve(members)
+    })
 
-// Should not be promise 
-const getFromDB = (sqlQuery) => 
-    db.query(sqlQuery, (err, result) => {
-        if (err) throw err
-        return result
+const getFromDB = sqlQuery => 
+    new Promise(resolve => {
+        db.query(sqlQuery, (err, result) => {
+            if (err) throw err
+            resolve(result)
+        })
     })
 
 module.exports = {
-
+    getAllMembers
 }
