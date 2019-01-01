@@ -1,3 +1,7 @@
+/**
+ * Creates database connection
+ */
+
 'use strict'
 
 require('dotenv').config()

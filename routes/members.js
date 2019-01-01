@@ -1,3 +1,7 @@
+/**
+ * Sets URIs for member pages
+ */
+
 'use strict'
 
 const dao = require('../models/dao')

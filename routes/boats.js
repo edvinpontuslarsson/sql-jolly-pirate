@@ -1,3 +1,7 @@
+/**
+ * Sets URIs for boat pages
+ */
+
 'use strict'
 
 const dao = require('../models/dao')

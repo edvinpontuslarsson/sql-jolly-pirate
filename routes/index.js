@@ -1,3 +1,5 @@
+// renders page for index URI
+
 'use strict'
 
 const router = require('express').Router()
