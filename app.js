@@ -55,5 +55,5 @@ app.use((err, req, res, next) => {
 const port = 8080
 
 app.listen(port, () => {
-    console.log(`argh, server started on port ${port}`)
+    console.log(`server started on port ${port}`)
 })
