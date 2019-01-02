@@ -24,6 +24,16 @@ const getSpecificMemberData = memberID =>
         resolve(memberData)
     })
 
+const getAllBoatsAscendingLengthOrder = () =>
+    new Promise(async resolve => {
+        const result = await getFromDB(
+            `SELECT * FROM Boats 
+            INNER JOIN Members ON Members.member_id = Boats.member_id 
+            ORDER BY boat_length`
+        )
+        resolve(result)
+    })
+
 const getBiggestBoatlength = () =>
     new Promise(async resolve => {
         const result = await getFromDB(
@@ -40,16 +50,6 @@ const getSmallestBoatLength = () =>
         resolve(result[0].boat_length)
     })
 
-const getAllBoatsAscendingLengthOrder = () =>
-    new Promise(async resolve => {
-        const result = await getFromDB(
-            `SELECT * FROM Boats 
-            INNER JOIN Members ON Members.member_id = Boats.member_id 
-            ORDER BY boat_length`
-        )
-        resolve(result)
-    })
-
 const getFromDB = sqlQuery => 
     new Promise(resolve => {
         db.query(sqlQuery, (err, result) => {
@@ -61,7 +61,7 @@ const getFromDB = sqlQuery =>
 module.exports = {
     getAllMembers,
     getSpecificMemberData,
+    getAllBoatsAscendingLengthOrder,
     getBiggestBoatlength,
-    getSmallestBoatLength,
-    getAllBoatsAscendingLengthOrder
+    getSmallestBoatLength
 }
